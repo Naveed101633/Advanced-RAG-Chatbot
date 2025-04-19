@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advance RAG Model</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="header-section">
+            <img src="{{ url_for('static', filename='robot.png') }}" alt="Robot Icon" class="header-image">
+            <h1>Advance RAG Model by <span class="gradient-text">Naveed</span></h1>
+        </div>
+
+        {% if not pdf_uploaded %}
+            <h2>Upload a PDF to Start</h2>
+            <form method="POST" enctype="multipart/form-data">
+                <input type="file" name="pdf" accept=".pdf" required>
+                <button type="submit">Upload</button>
+            </form>
+        {% else %}
+            <h2>Chat with Your PDF</h2>
+        {% endif %}
+
+        <div class="chat-container">
+            {% for message in chat_history %}
+                <div class="message {{ message.role }}">
+                    <strong>{{ message.role.capitalize() }}:</strong> {{ message.content }}
+                </div>
+            {% endfor %}
+        </div>
+
+        <form method="POST">
+            <input type="text" name="query" placeholder="{% if not pdf_uploaded %}Upload a PDF to enable chat{% else %}Ask a question...{% endif %}" {% if not pdf_uploaded %}disabled{% endif %} required>
+            <button type="submit" {% if not pdf_uploaded %}disabled{% endif %}>Send</button>
+        </form>
+    </div>
+</body>
+</html>

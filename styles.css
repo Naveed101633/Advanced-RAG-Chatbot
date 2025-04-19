@@ -1,0 +1,130 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #1a1a1a; /* Dark black background */
+  color: #ffffff; /* White text for readability */
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #2a2a2a; /* Slightly lighter dark shade for the container */
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+}
+
+.header-section {
+  text-align: center; /* Center the image and headline */
+  margin-bottom: 20px;
+}
+
+.header-image {
+  width: 150px; /* Adjust size to fit nicely */
+  height: auto;
+  margin-bottom: 10px; /* Space between image and headline */
+}
+
+h1 {
+  color: #ffffff; /* White color for the main headline */
+  font-size: 2.5em;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #00d4ff, #00ffaa); /* Gradient inspired by the image */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+h2 {
+  color: #cccccc; /* Light gray for secondary heading */
+  font-size: 1.5em;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+form {
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+input[type="file"], input[type="text"] {
+  padding: 10px;
+  margin-right: 10px;
+  border: 1px solid #444; /* Dark border for input fields */
+  border-radius: 8px;
+  background-color: #333; /* Dark background for inputs */
+  color: #ffffff; /* White text in inputs */
+}
+
+input[type="text"]::placeholder {
+  color: #888; /* Lighter placeholder text */
+}
+
+button {
+  padding: 10px 20px;
+  background: linear-gradient(90deg, #00d4ff, #00ffaa); /* Gradient button */
+  color: #1a1a1a; /* Dark text for contrast */
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+button:hover {
+  transform: scale(1.05); /* Slight scale effect on hover */
+}
+
+.chat-container {
+  max-height: 400px;
+  overflow-y: auto; /* Scrollable chat area */
+  border: 1px solid #444; /* Dark border */
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  background: #333; /* Dark background for chat */
+}
+
+.message {
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 8px;
+  word-wrap: break-word;
+}
+
+.message.user {
+  background-color: #00d4ff; /* Cyan for user messages */
+  color: #1a1a1a; /* Dark text for contrast */
+  margin-left: 20%;
+  margin-right: 5%;
+}
+
+.message.ai {
+  background-color: #00ffaa; /* Green for AI messages */
+  color: #1a1a1a; /* Dark text for contrast */
+  margin-right: 20%;
+  margin-left: 5%;
+}
+
+/* Scrollbar styling for a modern look */
+.chat-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.chat-container::-webkit-scrollbar-track {
+  background: #2a2a2a;
+  border-radius: 8px;
+}
+
+.chat-container::-webkit-scrollbar-thumb {
+  background: linear-gradient(90deg, #00d4ff, #00ffaa);
+  border-radius: 8px;
+}
